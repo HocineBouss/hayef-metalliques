@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: hayef-metalliques
+    env: docker
+    plan: free
+    branch: main
+    dockerfilePath: ./Dockerfile

@@ -1,0 +1,120 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<section class="flex-grow-1 d-flex align-items-center bg-light py-5">
+  <div class="container">
+    <button type="button" class="btn btn-outline-danger m-2" onclick="window.history.back()">
+      ← Retour
+    </button>
+    <!-- DESCRIPTION PRODUIT -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <h2 class="fw-bold text-danger mb-3">V<small>LM</small> — Industriels</h2>
+
+        <p>
+          Dans un monde industriel en pleine transformation, la gestion des stocks et des espaces de stockage  
+          devient un enjeu stratégique.  
+          <strong>VLM</strong> apporte une réponse moderne, efficace et parfaitement adaptée aux besoins  
+          des entreprises et sites industriels à fort volume.
+        </p>
+
+        <p>
+          Grâce à notre solution d’entreposage et de gestion intelligente des stocks,  
+          vous gagnez en espace, en rapidité et en sécurité :
+        </p>
+
+        <ul class="text-start">
+          <li>Optimisation du volume selon la nature et la forme de vos produits,</li>
+          <li>Accès rapide et contrôlé aux marchandises en temps réel,</li>
+          <li>Organisation intelligente pour une exploitation fluide et performante,</li>
+          <li>Sécurisation totale des stocks et des flux internes.</li>
+        </ul>
+
+        <p class="mt-3">
+          Avec <strong>VLM</strong>, transformez votre espace en un entrepôt intelligent, organisé et connecté.  
+          <br>
+          <em>VLM — la solution adaptable qui valorise votre volume, optimise votre gestion et modernise votre entreprise.</em>
+        </p>
+      </div>
+
+      <div class="col-md-6 text-center">
+        <img src="{{ asset('assets/img/v-system/vlm.png') }}" alt="VSystem VLM" class="img-fluid rounded shadow-sm">
+      </div>
+    </div>
+
+    <!-- TABLEAU TECHNIQUE -->
+    <div class="table-responsive">
+        <table class="table table-bordered align-middle">
+            <thead class="table-danger text-center">
+            <tr>
+                <th colspan="4">Spécifications techniques</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="fw-semibold table-light">Hauteur VLM</td><td>3 000 mm – 18 500 mm</td>
+                <td class="fw-semibold table-light">Vitesse max</td><td>Élévateur : 1.0 m/s &nbsp;|&nbsp; Accroche : 0.5 m/s</td>
+            </tr>
+            <tr>
+                <td class="fw-semibold table-light">Efficacité</td><td>30–60 s (selon configuration)</td>
+                <td class="fw-semibold table-light">Profondeur d’étagère</td><td>655 / 855 mm</td>
+            </tr>
+            <tr>
+                <td class="fw-semibold table-light">Précision de positionnement</td><td>±5 mm</td>
+                <td class="fw-semibold table-light">Moteur</td><td>DELTA / INOVANCE</td>
+            </tr>
+            <tr>
+                <td class="fw-semibold table-light">Espace d’étagère</td><td>25 mm / 50 mm</td>
+                <td class="fw-semibold table-light">PLC (Automate)</td><td>Siemens</td>
+            </tr>
+            <tr>
+                <td class="fw-semibold table-light">Hauteur de paroi d’étagère</td><td>75 / 125 mm</td>
+                <td class="fw-semibold table-light">Capteur</td><td>SICK</td>
+            </tr>
+            <tr>
+                <td class="fw-semibold table-light">Poids VLM</td><td>3 000 kg – 17 500 kg</td>
+                <td class="fw-semibold table-light">Trame (Raster)</td><td>XIEKEN</td>
+            </tr>
+            <tr>
+                <td class="fw-semibold table-light">Charge max</td><td>90 000 kg</td>
+                <td class="fw-semibold table-light">Encodeur</td><td>Omron</td>
+            </tr>
+            <tr>
+                <td class="fw-semibold table-light">Connexion</td><td>Mot de passe</td>
+                <td class="fw-semibold table-light">Électricité basse tension</td><td>Schneider</td>
+            </tr>
+            <tr>
+                <td class="fw-semibold table-light">Protection de sécurité</td><td>Grille de sécurité</td>
+                <td class="fw-semibold table-light">Capteur de poids</td><td>ZEMIC</td>
+            </tr>
+            <tr>
+                <td class="fw-semibold table-light">Moteur</td><td>Servo / Fréquence</td>
+                <td class="fw-semibold table-light">Articles optionnels</td><td>Pesage automatique</td>
+            </tr>
+            <tr>
+                <td class="fw-semibold table-light">Système d’entraînement</td><td>Courroie synchrone et chaîne</td>
+                <td class="fw-semibold table-light">Mesure automatique de la hauteur</td><td>Oui</td>
+            </tr>
+            <tr>
+                <td class="fw-semibold table-light">Écran opérateur</td><td>Écran tactile 13.3 pouces</td>
+                <td class="fw-semibold table-light">Reconnaissance</td><td>Empreinte / Visage / Carte IC</td>
+            </tr>
+            <tr>
+                <td class="fw-semibold table-light">Modèle d’étagère</td><td>Standard / Autre</td>
+                <td class="fw-semibold table-light">Plan de travail externe</td><td>Disponible</td>
+            </tr>
+            <tr>
+                <td colspan="4" class="table-light fw-bold text-center">Fonctions logicielles</td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                Interconnexion multi-machines · Paramétrage du type de matériau · Gestion du stockage ·  
+                Gestion de l’emplacement · Gestion des droits · Gestion des commandes · Gestion des stocks ·  
+                Gestion des défauts · Gestion de la configuration des étagères · Interface ERP / MES / SAP
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}

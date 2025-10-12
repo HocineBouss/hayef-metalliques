@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<!-- SECTION HERO -->
+<section class="text-center py-5 bg-light m-auto">
+  <div class="container">
+    <p class="text-uppercase text-muted mb-2">Solutions d’entreposage à haute efficacité</p>
+    <h1 class="display-4 fw-bold">
+      <span class="text-danger">V</span>-System
+    </h1>
+    <p class="lead mb-4">
+      La gestion intelligente, du <strong>stock</strong> au <strong>document</strong>.
+    </p>
+    <div class="d-flex justify-content-center gap-3 flex-wrap">
+      <a href="#contact" class="btn btn-danger btn-lg px-4">Demander une démo</a>
+      <a href="#produits" class="btn btn-outline-danger btn-lg px-4">Découvrir les modules</a>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE MOCKUP -->
+<section class="text-center py-5 bg-white">
+  <div class="container">
+    <img src="{{ asset('assets/img/mockup.png') }}" alt="V-System maquette" class="img-fluid rounded shadow">
+  </div>
+</section>
+{% endblock %}

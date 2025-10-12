@@ -1,0 +1,118 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<section class="py-5 bg-light text-center">
+  <div class="container">
+    <h1 class="fw-bold text-danger mb-4">À propos de HAYEF Métalliques</h1>
+    <p class="lead">
+      Fondée en <strong>2000</strong>, <strong>HAYEF Métalliques</strong> s’est imposée comme un acteur majeur
+      dans le domaine de la <strong>menuiserie et fabrication métallique</strong>.
+    </p>
+    <p>
+      Située à <strong>Tizi Rached</strong> (Wilaya de Tizi-Ouzou), l’entreprise met son savoir-faire
+      au service des professionnels, entreprises, administrations et établissements éducatifs.
+      Son expertise couvre l’étude, la conception et la fabrication de solutions métalliques
+      sur mesure, robustes et esthétiques.
+    </p>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-md-4">
+        <h2 class="fw-bold text-danger mb-3">Notre savoir-faire</h2>
+        <p>
+          Depuis plus de deux décennies, HAYEF Métalliques conçoit et fabrique des produits
+          alliant qualité, durabilité et précision. Son expertise s’étend de la
+          <strong>mobilier métallique</strong> à la <strong>ferronnerie industrielle</strong>, en passant par
+          les <strong>portails et rideaux électriques</strong> ou encore les
+          <strong>solutions de rangement professionnelles</strong>.
+        </p>
+        <p>
+          Chaque création est le fruit d’un travail rigoureux, réalisé avec des matériaux
+          résistants et une finition en <strong>peinture époxy</strong> pour une tenue
+          optimale face à l’usure et à la corrosion.
+        </p>
+      </div>
+      <div class="col-md-8">
+        <img src="{{ asset('assets/img/workshop/workshop.png') }}" alt="Atelier HAYEF Métalliques"
+             class="img-fluid rounded shadow">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="fw-bold text-danger mb-4">Nos domaines d’expertise</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="fw-bold mb-3">Mobilier scolaire et professionnel</h5>
+            <p>Fabrication de tables, chaises, armoires et casiers en acier, conçus pour durer
+              et s’adapter aux besoins des écoles et entreprises.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="fw-bold mb-3">Serrurerie et ferronnerie</h5>
+            <p>Réalisation sur mesure de portails, rampes, clôtures et structures métalliques,
+              pour particuliers, entreprises et industries.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="fw-bold mb-3">Automatisation & solutions métalliques</h5>
+            <p>Portails et rideaux motorisés, découpe plasma CNC, pliage, et traitement de
+              surface professionnel pour des installations modernes et fiables.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container text-center">
+    <h2 class="fw-bold text-danger mb-3">Ils nous font confiance</h2>
+    <p class="text-muted mb-4">De nombreuses institutions, entreprises et établissements scolaires font déjà
+      confiance à HAYEF Métalliques pour la qualité de ses produits et son accompagnement professionnel.</p>
+        <section class="py-5 bg-light">
+  <div class="container text-center">
+    {% if partners is not empty %}
+      <div class="overflow-hidden">
+        <div class="d-flex align-items-center gap-5"
+             style="width:max-content; animation:scroll-logos 30s linear infinite;">
+          {% for logo in partners %}
+            <img src="{{ logo }}" alt="Partenaire {{ loop.index }}"
+                 class="img-fluid" style="max-height:80px;">
+          {% endfor %}
+          {# On duplique la boucle pour un effet continu #}
+          {% for logo in partners %}
+            <img src="{{ logo }}" alt="Partenaire copie {{ loop.index }}"
+                 class="img-fluid" style="max-height:80px;">
+          {% endfor %}
+        </div>
+      </div>
+    {% else %}
+      <p class="text-muted">Aucun partenaire enregistré pour le moment.</p>
+    {% endif %}
+  </div>
+
+  <style>
+    @keyframes scroll-logos {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+  </style>
+</section>
+
+  </div>
+</section>
+{% endblock %}

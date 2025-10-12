@@ -1,0 +1,134 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+ 
+
+<section class="flex-grow-1 d-flex align-items-center bg-light py-5">
+  <div class="container">
+    <button type="button" class="btn btn-outline-danger m-2" onclick="window.history.back()">
+      ← Retour
+    </button>
+
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <h2 class="fw-bold text-danger mb-3">V<small>CM</small> — Administration</h2>
+
+        <p>
+        Avec la modernisation de l'administration et l'ère de la numérisation,  
+        la gestion des documents reste un défi essentiel :  
+        <strong>comment préserver, organiser et accéder rapidement à l'information ?</strong>
+        </p>
+
+        <p>
+        <strong>VCM</strong> apporte la réponse.  
+        Notre solution d’entreposage et de gestion intelligente des documents administratifs et d’archivage  
+        offre aux administrations et entreprises une nouvelle façon de travailler :
+        </p>
+
+        <ul class="text-start">
+        <li>Gain d’espace grâce à une organisation optimisée,</li>
+        <li>Accès instantané aux documents en temps réel,</li>
+        <li>Sécurité renforcée et traçabilité des informations,</li>
+        <li>Gestion moderne et fluide au service de la performance.</li>
+        </ul>
+
+        <p class="mt-3">
+        Avec <strong>VCM</strong>, modernisez votre administration, simplifiez vos processus et maîtrisez votre temps.  
+        <br>
+        <em>VCM — la solution intelligente pour une gestion documentaire efficace, sécurisée et durable.</em>
+        </p>
+
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="{{ asset('assets/img/v-system/vcm.png') }}" alt="VSystem VCM" class="img-fluid rounded shadow-sm">
+      </div>
+    </div>
+
+    <div class="table-responsive">
+  <table class="table table-bordered align-middle">
+    <thead class="table-danger text-center">
+      <tr>
+        <th colspan="4">Spécifications techniques</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="fw-semibold table-light">Hauteur VCM</td><td>2 000 mm – 13 500 mm</td>
+        <td class="fw-semibold table-light">Efficacité</td><td>30–60 s (selon la configuration)</td>
+      </tr>
+      <tr>
+        <td class="fw-semibold table-light">Largeur de tablette</td><td>500 mm – 4 100 mm</td>
+        <td class="fw-semibold table-light">Vitesse</td><td>Max : 1 m/s &nbsp;|&nbsp; Standard : 0.3 m/s</td>
+      </tr>
+      <tr>
+        <td class="fw-semibold table-light">Profondeur de tablette</td><td>100 mm – 900 mm</td>
+        <td class="fw-semibold table-light">Interconnexion multi-machines</td><td>Oui</td>
+      </tr>
+      <tr>
+        <td class="fw-semibold table-light">Charge par tablette</td><td>50 kg – 650 kg</td>
+        <td class="fw-semibold table-light">Paramétrage du type de matériau</td><td>Disponible</td>
+      </tr>
+      <tr>
+        <td class="fw-semibold table-light">Écran opérateur</td><td>Écran tactile 13.3 pouces</td>
+        <td class="fw-semibold table-light">Gestion du stockage</td><td>Oui</td>
+      </tr>
+      <tr>
+        <td class="fw-semibold table-light">Précision de positionnement</td><td>±5 mm</td>
+        <td class="fw-semibold table-light">Gestion de l’emplacement</td><td>Oui</td>
+      </tr>
+      <tr>
+        <td class="fw-semibold table-light">Poids total du VCM</td><td>350 kg – 12 500 kg</td>
+        <td class="fw-semibold table-light">Gestion des droits</td><td>Oui</td>
+      </tr>
+      <tr>
+        <td class="fw-semibold table-light">Accès</td><td>Plan de travail externe</td>
+        <td class="fw-semibold table-light">Gestion des commandes</td><td>Oui</td>
+      </tr>
+      <tr>
+        <td class="fw-semibold table-light">Charge maximale</td><td>25 000 kg</td>
+        <td class="fw-semibold table-light">Gestion des stocks</td><td>Oui</td>
+      </tr>
+      <tr>
+        <td class="fw-semibold table-light">Connexion</td><td>Par mot de passe</td>
+        <td class="fw-semibold table-light">Gestion des défauts</td><td>Oui</td>
+      </tr>
+      <tr>
+        <td class="fw-semibold table-light">Protection de sécurité</td><td>Grille de sécurité</td>
+        <td class="fw-semibold table-light">Gestion de la configuration des étagères</td><td>Oui</td>
+      </tr>
+      <tr>
+        <td class="fw-semibold table-light">Moteur</td><td>Servo / Fréquence variable</td>
+        <td class="fw-semibold table-light">Interface ERP / MES / SAP</td><td>Disponible</td>
+      </tr>
+      <tr>
+        <td colspan="4" class="table-light fw-bold text-center">Composants standards</td>
+      </tr>
+      <tr>
+        <td class="fw-semibold table-light">Moteur</td><td>DELTA / INOVANCE</td>
+        <td class="fw-semibold table-light">Contrôleur</td><td>DELTA / INOVANCE</td>
+      </tr>
+      <tr>
+        <td class="fw-semibold table-light">API (PLC)</td><td>Siemens</td>
+        <td class="fw-semibold table-light">Capteur</td><td>SICK</td>
+      </tr>
+      <tr>
+        <td class="fw-semibold table-light">Trame (Raster)</td><td>XIEKEN</td>
+        <td class="fw-semibold table-light">Encodeur</td><td>Omron</td>
+      </tr>
+      <tr>
+        <td class="fw-semibold table-light">Électricité basse tension</td><td>Schneider</td>
+        <td class="fw-semibold table-light">Plan de travail pliant</td><td>Disponible</td>
+      </tr>
+      <tr>
+        <td class="fw-semibold table-light">Reconnaissance</td><td>Empreinte / Visage / Carte IC</td>
+        <td class="fw-semibold table-light">Pesage automatique</td><td>Oui</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+  </div>
+</section>
+{% endblock %}
