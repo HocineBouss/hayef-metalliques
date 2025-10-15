@@ -15,12 +15,13 @@
 
 <body class="d-flex flex-column min-vh-100">
   <!-- HEADER -->
-  <header class="bg-danger text-white py-1">
+  <header class="bg-danger py-1">
     <div class="mx-2 d-flex flex-wrap justify-content-between align-items-center">
-      <a href="{{ path('app_home') }}" class="text-white text-decoration-none fs-4 fw-bold">
-        <img src="{{ asset('assets/img/logo_hayef.jpg') }}" alt="logo" class="img-fluid rounded shadow" style="max-height:50px;">
+      <a href="{{ path('app_home') }}" class="text-decoration-none fs-4 fw-bold">
+        <img src="{{ asset('assets/img/logo.png') }}" alt="logo" class="img-fluid rounded shadow" style="max-height:50px;">
       </a>
-      <nav class="nav">
+      <nav class="nav text-white">
+        <a href="{{ path('app_home') }}" class="nav-link text-white">Accueil</a>
         <a href="{{ path('app_vsystem') }}" class="nav-link text-white">V-System</a>
         <a href="{{ path('app_contact') }}" class="nav-link text-white">Contact</a>
         <a href="{{ path('app_apropos') }}" class="nav-link text-white">À propos</a>

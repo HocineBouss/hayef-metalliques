@@ -1,50 +1,67 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Contacts{% endblock %}
-
 {% block body %}
-<!-- SECTION CONTACT -->
-<section id="contact" class="py-5 bg-white">
-  <div class="container">
+<section class="flex-grow-1 d-flex align-items-center bg-light py-5">
+  <div class="container text-center">
+
+    <h2 class="fw-bold text-danger mb-4">Contactez-nous</h2>
+    <p class="mb-5 fs-5 text-muted">
+      Une question, un projet, un devis ?  
+      N'hésitez pas à nous joindre ou à nous rendre visite, notre équipe est à votre écoute.
+    </p>
+
     <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div class="card shadow border-0 rounded-4">
-          <div class="card-body p-4">
-            <h3 class="text-center mb-4 text-danger fw-bold">Contactez-nous</h3>
-            <form method="post" action="mailto:contact@example.com">
-              
-              <div class="mb-3">
-                <label for="name" class="form-label">Nom</label>
-                <input type="text" class="form-control" id="name" name="name" required>
-              </div>
+      <!-- Adresse -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <h5 class="fw-bold text-danger mb-3">
+              <i class="bi bi-geo-alt-fill me-2"></i>Adresse
+            </h5>
+            <p class="mb-0">
+              Local n°01, lieu dit Taguemount Guersan<br>
+              Commune Tizi Rached<br>
+              Wilaya de Tizi-Ouzou
+            </p>
+          </div>
+        </div>
+      </div>
 
-              <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" required>
-              </div>
+      <!-- Email -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <h5 class="fw-bold text-danger mb-3">
+              <i class="bi bi-envelope-fill me-2"></i>E-mail
+            </h5>
+            <p class="mb-1">
+              <a href="mailto:hayef.metalliques@gmail.com" class="text-decoration-none text-dark">
+                hayef.metalliques@gmail.com
+              </a>
+            </p>
+            <p class="mb-0">
+              <a href="mailto:commercial.hayef@gmail.com" class="text-decoration-none text-dark">
+                commercial.hayef@gmail.com
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
 
-              <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
-                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-              </div>
-
-              <div class="d-grid">
-                <button type="submit" class="btn btn-danger btn-lg">Envoyer</button>
-              </div>
-
-            </form>
+      <!-- Téléphone -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <h5 class="fw-bold text-danger mb-3">
+              <i class="bi bi-telephone-fill me-2"></i>Téléphone
+            </h5>
+            <p class="mb-1">Tel/Fax : <a href="tel:0021326319357" class="text-decoration-none text-dark">00213 26 31 93 57</a></p>
+            <p class="mb-0">Mobile : <a href="tel:00213770203226" class="text-decoration-none text-dark">00213 7 70 20 32 26</a></p>
           </div>
         </div>
       </div>
     </div>
-    <!-- Coordonnées -->
-    <div class="text-center mt-5">
-      <h4 class="fw-bold text-danger mb-3">Contact</h4>
-      <p class="mb-1"><i class="bi bi-telephone"></i> <strong>Bureau :</strong> 00213 26 319 357</p>
-      <p class="mb-1"><i class="bi bi-phone"></i> <strong>Mobile 1 :</strong> 00213 770 203 226</p>
-      <p class="mb-1"><i class="bi bi-phone"></i> <strong>Mobile 2 :</strong> 00213 770 339 365</p>
-      <p class="mt-3"><i class="bi bi-envelope"></i> <strong>Email :</strong> <a href="mailto:contact@example.com">contact@example.com</a></p>
-    </div>
+
   </div>
 </section>
 {% endblock %}
