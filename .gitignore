@@ -13,3 +13,7 @@
 # /public/assets/
 /assets/vendor/
 ###< symfony/asset-mapper ###
+
+### fichier deploy ###
+/deploy.sh
+### fichier deploy ###
