@@ -15,5 +15,5 @@
 ###< symfony/asset-mapper ###
 
 ### fichier deploy ###
-/deploy.sh
+deploy.sh
 ### fichier deploy ###

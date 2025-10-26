@@ -1,28 +1,44 @@
 #!/usr/bin/env bash
-set -e
+set -Eeuo pipefail
 
-AD_USER="hayef-metalliques"
-AD_HOST="ssh-1.alwaysdata.com"
-AD_PATH="/home/$AD_USER/apps/hayef"
+# === Paramètres à adapter au besoin ===
+REMOTE_USER="hayef-metalliques"
+REMOTE_HOST="ssh-hayef-metalliques.alwaysdata.net"
+PROJECT_DIR="~/www/ton-projet"   # <-- remplace par le chemin réel sur le serveur
+BRANCH="main"
 
-echo "[1/4] rsync fichiers…"
-rsync -avz --delete \
-  --exclude=".git" \
-  --exclude="var/*" \
-  --exclude="vendor/*" \
-  --exclude="node_modules/*" \
-  . "$AD_USER@$AD_HOST:$AD_PATH"
+# Options SSH : accepte automatiquement la nouvelle empreinte si jamais elle change
+SSH_OPTS="-o StrictHostKeyChecking=accept-new"
 
-echo "[2/4] composer install…"
-ssh $AD_USER@$AD_HOST "cd $AD_PATH && composer install --no-dev --optimize-autoloader"
+echo "Connexion à ${REMOTE_USER}@${REMOTE_HOST} ..."
+# -t alloue un pseudo-TTY pour bien gérer la saisie du mot de passe si nécessaire
+ssh -t ${SSH_OPTS} "${REMOTE_USER}@${REMOTE_HOST}" bash <<'EOSSH'
+set -Eeuo pipefail
 
-echo "[3/4] migrations & cache…"
-ssh $AD_USER@$AD_HOST "cd $AD_PATH && \
-  php bin/console doctrine:migrations:migrate --no-interaction --env=prod || true && \
-  php bin/console cache:clear --env=prod && \
-  php bin/console cache:warmup --env=prod"
+# --- À ADAPTER : même chemin que PROJECT_DIR ci-dessus ---
+cd ~/www/ton-projet
 
-echo "[4/4] purge Cloudflare (optionnel)"
-# -> Tu peux appeler l’API Cloudflare ici si tu as un token, sinon purge manuelle dans le dashboard.
+echo "→ Git pull..."
+git pull origin main
+
+echo "→ Composer install (prod, sans dev)..."
+# Détermine la meilleure commande composer disponible
+if command -v composer >/dev/null 2>&1; then
+  COMPOSER="composer"
+elif [ -f "./composer.phar" ]; then
+  COMPOSER="php ./composer.phar"
+else
+  echo "Composer introuvable. Installe-le ou place un composer.phar à la racine du projet."
+  exit 1
+fi
+
+$COMPOSER install --no-dev --prefer-dist --no-progress --optimize-autoloader --no-interaction
+
+echo "→ Symfony cache clear (prod)..."
+php bin/console cache:clear --env=prod
+
+echo "→ Symfony cache warmup (prod)..."
+php bin/console cache:warmup --env=prod
 
 echo "✅ Déploiement terminé."
+EOSSH
