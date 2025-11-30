@@ -4,7 +4,7 @@ set -Eeuo pipefail
 # === Paramètres à adapter au besoin ===
 REMOTE_USER="hayef-metalliques"
 REMOTE_HOST="ssh-hayef-metalliques.alwaysdata.net"
-PROJECT_DIR="~/www/ton-projet"   # <-- remplace par le chemin réel sur le serveur
+PROJECT_DIR="~/www/hayef-metalliques"   # <-- remplace par le chemin réel sur le serveur
 BRANCH="main"
 
 # Options SSH : accepte automatiquement la nouvelle empreinte si jamais elle change
@@ -16,7 +16,7 @@ ssh -t ${SSH_OPTS} "${REMOTE_USER}@${REMOTE_HOST}" bash <<'EOSSH'
 set -Eeuo pipefail
 
 # --- À ADAPTER : même chemin que PROJECT_DIR ci-dessus ---
-cd ~/www/ton-projet
+cd ~/www/hayef-metalliques
 
 echo "→ Git pull..."
 git pull origin main
